@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Game Musik Xylophone - Challenge & Free Play</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <!-- Watermark Pembuat -->
+        <div id="watermark">Made by : Stewart | IG: xgenfight</div>
+
+        <!-- MENU UTAMA -->
+        <div id="menu-screen" class="screen active">
+            <div class="panel-box">
+                <h1 class="game-title">🎵 Xylophone Kids 🎵</h1>
+                <p class="subtitle">Pilih mode bermain favoritmu!</p>
+                <div class="menu-button-group">
+                    <button class="btn-main" onclick="showLevelSelect()">🎮 Mode Challenge (Lv 1-10)</button>
+                    <button class="btn-freeplay" onclick="startFreePlay()">🎹 Free Play (Bebas Main)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PILIH LEVEL (1-10) -->
+        <div id="level-screen" class="screen">
+            <div class="panel-box">
+                <h2 class="section-title">Pilih Level (1-10)</h2>
+                <div class="level-grid" id="level-grid"></div>
+                <button class="btn-back" onclick="showMenu()">Kembali ke Menu</button>
+            </div>
+        </div>
+
+        <!-- GAMEPLAY SCREEN (CHALLENGE MODE) -->
+        <div id="gameplay-screen" class="screen">
+            <div class="game-header">
+                <div id="hearts-display">❤️❤️❤️</div>
+                <div id="level-display">Level: 1</div>
+                <button class="btn-exit" onclick="showLevelSelect()">🚪 Keluar</button>
+            </div>
+
+            <div id="instruction-banner">Perhatikan nada yang menyala...</div>
+
+            <div class="xylophone-stand">
+                <div class="xylophone-bars" id="xylophone-container"></div>
+            </div>
+        </div>
+
+        <!-- FREE PLAY SCREEN -->
+        <div id="freeplay-screen" class="screen">
+            <div class="game-header">
+                <div style="font-size: 18px;">🎹 Mode Bebas (Free Play)</div>
+                <button class="btn-exit" onclick="showMenu()">🚪 Menu Utama</button>
+            </div>
+
+            <div id="instruction-banner">Ketuk bilah xylophone untuk membuat lagumu sendiri!</div>
+
+            <div class="xylophone-stand">
+                <div class="xylophone-bars" id="freeplay-xylophone-container"></div>
+            </div>
+        </div>
+
+        <!-- GAME OVER SCREEN -->
+        <div id="gameover-screen" class="screen">
+            <div class="panel-box">
+                <h2 class="gameover-title">💔 Sayang Sekali!</h2>
+                <p id="gameover-text" class="gameover-desc">Kamu gagal dan hanya sampai level.</p>
+                <div class="button-group">
+                    <button class="btn-main" onclick="restartCurrentLevel()">Coba Lagi</button>
+                    <button class="btn-back" onclick="showLevelSelect()">Pilih Level</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEVEL WIN / CLEAR SCREEN -->
+        <div id="win-screen" class="screen">
+            <div class="panel-box">
+                <h2 class="win-title">🌟 Hebat Sekali! 🌟</h2>
+                <p id="win-text" class="win-desc">Kamu Berhasil Menyelesaikan Level Ini!</p>
+                <div class="button-group">
+                    <button class="btn-main" id="btn-next-level" onclick="nextLevel()">Level Berikutnya</button>
+                    <button class="btn-back" onclick="showLevelSelect()">Pilih Level</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
